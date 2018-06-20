@@ -119,9 +119,12 @@ h1 {
     margin-left: auto;
 }
 
+/*
+ * Styles for the success message
+ */
+
 .success {
     background-color: #fff;
-    display: flex;
     justify-content: center;  
     position: fixed;
     top: 0;

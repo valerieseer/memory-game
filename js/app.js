@@ -27,19 +27,6 @@ function shuffle(array) {
     return array
 }
 
-function appendCards() {
-    for (card of cards) {
-        let cardEl = document.createElement('LI')
-        cardEl.classList.add('card')
-        cardEl.innerHTML = card
-    
-        deck.appendChild(cardEl)
-    
-        cardEl.addEventListener('click', showCard)
-    }
-    
-}
-
 function incrementMoves() {
     clicks++
 
@@ -92,6 +79,8 @@ function showCard() {
     this.classList.add('open')
     openCards.push(this)
 
+    incrementMoves()
+
     if (openCards.length === 2) {
         if (this.firstChild.className === openCards[0].firstChild.className) {
             lockCard(this)
@@ -103,13 +92,24 @@ function showCard() {
         openCards.length = 0
     }
 
-    incrementMoves()
-
     if (matchedCards.length === 16) {
         setTimeout(function() {
             showSuccess()
         }, 1000)
     }
+}
+
+function appendCards() {
+    for (card of cards) {
+        let cardEl = document.createElement('LI')
+        cardEl.classList.add('card')
+        cardEl.innerHTML = card
+    
+        deck.appendChild(cardEl)
+    
+        cardEl.addEventListener('click', showCard)
+    }
+    
 }
 
 movesEl.innerHTML = moves
