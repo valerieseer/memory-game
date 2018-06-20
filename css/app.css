@@ -23,7 +23,7 @@ ul {
 }
 
 body {
-    font-family: 'Coda', cursive;
+    font-family: system-ui, sans-serif;
 }
 
 .container {
@@ -34,8 +34,7 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-size: 42px;
 }
 
 /*
@@ -69,23 +68,27 @@ h1 {
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
+.deck .card.open,
+.deck .card.match,
+.deck .card.error {
+    cursor: default;
+    font-size: 33px;
+}
 .deck .card.open {
     transform: rotateY(0);
     background: #02b3e4;
-    cursor: default;
     pointer-events: none;
 }
-
-.deck .card.show {
-    font-size: 33px;
+.deck .card.match,
+.deck .card.error {
+    pointer-events: none;
 }
 
 .deck .card.match {
-    cursor: default;
     background: #02ccba;
-    font-size: 33px;
-    pointer-events: none;
+}
+.deck .card.error {
+    background: #e24c4c;
 }
 
 /*
@@ -95,6 +98,7 @@ h1 {
 .score-panel {
     display: flex;
     text-align: left;
+    font-family: Menlo, cursive;
     width: 345px;
     margin-bottom: 10px;
 }
@@ -113,4 +117,41 @@ h1 {
 .score-panel .restart {
     cursor: pointer;
     margin-left: auto;
+}
+
+.success {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;  
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1050;
+}
+
+.success div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+.success button {
+    background-color: #24f1c3;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 20px auto 0 auto;
+    padding: 10px 0;
+    width: 35%;
+}
+
+.is-hidden {
+    display: none;
+}
+.is-flex-visible {
+    display: flex;
 }
