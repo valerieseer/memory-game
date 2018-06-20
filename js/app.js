@@ -11,7 +11,6 @@ let openCards = []
 let matchedCards = []
 let clicks = 0
 let moves = 0
-console.log(stars)
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
