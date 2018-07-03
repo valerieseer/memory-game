@@ -33,14 +33,19 @@ body {
     flex-direction: column;
 }
 
+main {
+    display: flex;
+    padding: 30px 0;
+}
+
 h1 {
     font-size: 42px;
+    margin: 0 0 20px 0;
 }
 
 /*
- * Styles for the deck of cards
+ * Deck of cards
  */
-
 .deck {
     width: 660px;
     min-height: 680px;
@@ -92,13 +97,13 @@ h1 {
 }
 
 /*
- * Styles for the Score Panel
+ * Score Panel
  */
-
 .score-panel {
     display: flex;
     text-align: left;
     font-family: Menlo, cursive;
+    justify-content: center;
     width: 345px;
     margin-bottom: 10px;
 }
@@ -106,7 +111,7 @@ h1 {
 .score-panel .stars {
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .score-panel .stars li {
@@ -114,15 +119,44 @@ h1 {
     display: inline-block;
 }
 
+.score-panel .progress {
+    display: flex;
+}
+
 .score-panel .restart {
     cursor: pointer;
-    margin-left: auto;
 }
 
 /*
- * Styles for the success message
+ * Timer
  */
+.timer__panel {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.timer__start {
+    background-color: #ff8400;
+    border: 1px solid #ff8400;
+}
+.timer__reset {
+    background-color: #fff;
+    border: 1px solid #ff8400;
+    color: #ff8400!important;
+}
+.timer__start,
+.timer__reset {
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+.timer {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+}
 
+/*
+ * Success message
+ */
 .success {
     background-color: #fff;
     justify-content: center;  
@@ -142,19 +176,35 @@ h1 {
 }
 .success button {
     background-color: #24f1c3;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
     font-weight: 600;
     margin: 20px auto 0 auto;
     padding: 10px 0;
     width: 35%;
 }
 
+/*
+ * Helper classes
+ */
+.button {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    color: #fff;
+    cursor: pointer;
+}
+
+/*
+ * State classes
+ */
 .is-hidden {
     display: none;
 }
 .is-flex-visible {
     display: flex;
+}
+
+@media (max-width: 992px) {
+    main {
+        flex-direction: column;
+    }
 }

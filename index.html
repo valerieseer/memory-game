@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Matching Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Memory Game</title>
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -11,31 +13,33 @@
 <body>
 
     <div class="container">
-        <header>
-            <h1>Memory Game</h1>
-        </header>
-
-        <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
-
-        	<p><span class="moves"></span> Moves</p>
-
-            <div class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
-        </section>
-
-        <ul class="deck"></ul>
+        <main>
+            <section>
+                <div class="timer__panel">
+                    <h1>Memory Game</h1>
+                    <button class="timer__start button">Start</button>
+                    <button class="timer__reset button restart">Reset</button>
+                    <p class="timer">00:00:00</p>
+                </div>
+                <div class="score-panel">
+                    <ul class="stars">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+        
+                    <p><span class="moves"></span> Moves</p>
+                </div>
+            </section>
+    
+            <ul class="deck"></ul>
+        </main>
 
         <div class="success is-hidden">
             <div>
                 <h2>Congratulations! You won!</h2>
-                <p>With <span class="success__moves"></span> moves and <span class="success__stars"></span> stars.</p>
-                <button class="success__reset">Play again</button>
+                <p>In <span class="success__time"></span> and with <span class="success__stars"></span> stars.</p>
+                <button class="success__reset button">Play again</button>
             </div>
         </div>
     </div>
